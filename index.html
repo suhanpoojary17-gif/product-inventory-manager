@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Inventory Manager - SJEC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Product Inventory Manager</h1>
+    <p>Advanced Web Technologies (24MCA301) - Assignment 1</p>
+  </header>
+
+  <main class="container">
+    <!-- Add Product Form -->
+    <section class="card">
+      <h2>Add New Product</h2>
+      <form id="addProductForm">
+        <div class="form-group">
+          <label for="productName">Product Name:</label>
+          <input type="text" id="productName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="productPrice">Price ($):</label>
+          <input type="number" id="productPrice" step="0.01" min="0" required>
+        </div>
+
+        <div class="form-group">
+          <label for="productTags">Tags (comma-separated):</label>
+          <input type="text" id="productTags" placeholder="e.g. electronics, accessories">
+        </div>
+
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="productStock" checked>
+          <label for="productStock">In Stock</label>
+        </div>
+
+        <button type="submit" class="btn primary-btn">Add Product</button>
+      </form>
+    </section>
+
+    <!-- Filter Controls & Inventory Table -->
+    <section class="card">
+      <div class="controls-header">
+        <h2>Inventory List</h2>
+        <div class="filter-buttons">
+          <button id="showAllBtn" class="btn secondary-btn">Show All</button>
+          <button id="showAvailableBtn" class="btn secondary-btn">In-Stock Only</button>
+          <button id="applyDiscountBtn" class="btn accent-btn">Apply 15% Discount</button>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Tags</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="productTableBody">
+          <!-- Rendered dynamically -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="dist/app.js"></script>
+</body>
+</html>
